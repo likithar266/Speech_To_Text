@@ -1,0 +1,421 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/* Body Styling */
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  background: linear-gradient(120deg, #1d3557, #457b9d, #a8dadc);
+  background-size: 200% 200%;
+  animation: gradientBackground 6s ease infinite;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Gradient Animation */
+@keyframes gradientBackground {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Heading */
+h1 {
+  font-size: 2.5rem;
+  color: #06beb6;
+  text-shadow: 0 3px 8px rgba(82, 78, 78, 0.4);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Container */
+.container {
+  width: 600px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+/* Inputs */
+input[type="url"],
+input[type="file"] {
+  width: 95%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 8px;
+  background: #f0f0f0;
+  font-size: 1rem;
+  color: #8b7e7e;
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 3px 10px rgba(66, 135, 245, 0.4);
+  border: 1px solid #457b9d;
+}
+
+/* Buttons */
+button {
+  width: 100%;
+  padding: 15px;
+  margin-top: 15px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: linear-gradient(90deg, #06beb6, #48b1bf);
+  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(6, 190, 182, 0.3);
+}
+
+button:hover {
+  background: linear-gradient(90deg, #48b1bf, #06beb6);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(6, 190, 182, 0.5);
+}
+
+/* Status Message */
+#status {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1d3557;
+  background: rgba(231, 171, 171, 0.3);
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Download Link */
+#downloadLink {
+  text-align: center;
+  margin-top: 25px;
+}
+
+#downloadLink a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ff7eb3, #ff758c);
+  padding: 12px 25px;
+  border-radius: 8px;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(255, 117, 140, 0.3);
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#downloadLink a:hover {
+  background: linear-gradient(90deg, #ff758c, #ff7eb3);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(255, 117, 140, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  button, input[type="url"], input[type="file"] {
+    font-size: 1rem;
+  }
+}
+
+.shiny-button {
+  position: relative;
+  padding: 15px 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #ff7eb3, #ff758c);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(255, 117, 140, 0.3);
+}
+
+.shiny-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 117, 140, 0.5);
+}
+
+.shiny-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 255, 255, 0.5), transparent 60%);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.shiny-button:hover::before {
+  opacity: 1;
+}
+ 
+/* Extra Features for Enhanced Design */
+
+/* Floating Animations */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* Animated Bubbles Background */
+.bubbles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.bubble {
+  position: absolute;
+  bottom: -100px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  animation: bubbleFloat 8s ease-in infinite;
+}
+
+@keyframes bubbleFloat {
+  0% { transform: translateY(0) scale(0.5); opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { transform: translateY(-120vh) scale(1.5); opacity: 0; }
+}
+
+.bubble:nth-child(1) { width: 40px; height: 40px; left: 20%; animation-delay: 2s; }
+.bubble:nth-child(2) { width: 60px; height: 60px; left: 40%; animation-delay: 4s; }
+.bubble:nth-child(3) { width: 30px; height: 30px; left: 60%; animation-delay: 6s; }
+.bubble:nth-child(4) { width: 70px; height: 70px; left: 80%; animation-delay: 8s; }
+.bubble:nth-child(5) { width: 50px; height: 50px; left: 10%; animation-delay: 10s; }
+
+/* Glow Effect for Buttons */
+button.glowing-button {
+  background: linear-gradient(90deg, #06beb6, #48b1bf);
+  box-shadow: 0 0 10px #06beb6, 0 0 20px #48b1bf, 0 0 30px #06beb6;
+}
+
+button.glowing-button:hover {
+  box-shadow: 0 0 20px #48b1bf, 0 0 40px #06beb6, 0 0 60px #48b1bf;
+}
+
+/* Typing Animation */
+.typing-animation {
+  font-size: 1.3rem;
+  color: #06beb6;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.typing-animation span {
+  display: inline-block;
+  border-right: 2px solid #06beb6;
+  animation: typing 3s steps(20) infinite, blink 0.6s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 0;
+}
+
+@keyframes typing {
+  0% { max-width: 0; }
+  100% { max-width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* Floating Animation for Buttons */
+button {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Shiny Button Effect */
+.shiny-button {
+  position: relative;
+  padding: 15px 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #ff7eb3, #ff758c);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(255, 117, 140, 0.3);
+}
+
+.shiny-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 117, 140, 0.5);
+}
+
+.shiny-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 255, 255, 0.5), transparent 60%);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.shiny-button:hover::before {
+  opacity: 1;
+}
+
+/* Extra Features for Enhanced Design */
+
+/* Floating Animations */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* Animated Bubbles Background */
+.bubbles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.bubble {
+  position: absolute;
+  bottom: -100px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  animation: bubbleFloat 8s ease-in infinite;
+}
+
+@keyframes bubbleFloat {
+  0% { transform: translateY(0) scale(0.5); opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { transform: translateY(-120vh) scale(1.5); opacity: 0; }
+}
+
+.bubble:nth-child(1) { width: 40px; height: 40px; left: 20%; animation-delay: 2s; }
+.bubble:nth-child(2) { width: 60px; height: 60px; left: 40%; animation-delay: 4s; }
+.bubble:nth-child(3) { width: 30px; height: 30px; left: 60%; animation-delay: 6s; }
+.bubble:nth-child(4) { width: 70px; height: 70px; left: 80%; animation-delay: 8s; }
+.bubble:nth-child(5) { width: 50px; height: 50px; left: 10%; animation-delay: 10s; }
+
+/* Glow Effect for Buttons */
+button.glowing-button {
+  background: linear-gradient(90deg, #06beb6, #48b1bf);
+  box-shadow: 0 0 10px #06beb6, 0 0 20px #48b1bf, 0 0 30px #06beb6;
+}
+
+button.glowing-button:hover {
+  box-shadow: 0 0 20px #48b1bf, 0 0 40px #06beb6, 0 0 60px #48b1bf;
+}
+
+/* Typing Animation */
+.typing-animation {
+  font-size: 1.3rem;
+  color: #06beb6;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.typing-animation span {
+  display: inline-block;
+  border-right: 2px solid #06beb6;
+  animation: typing 3s steps(20) infinite, blink 0.6s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 0;
+}
+
+@keyframes typing {
+  0% { max-width: 0; }
+  100% { max-width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* Floating Animation for Buttons */
+button {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Shiny Button Effect */
+.shiny-button {
+  position: relative;
+  padding: 15px 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #ff7eb3, #ff758c);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(255, 117, 140, 0.3);
+}
+
+.shiny-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 117, 140, 0.5);
+}
+
+.shiny-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 255, 255, 0.5), transparent 60%);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.shiny-button:hover::before {
+  opacity: 1;
+}
+
